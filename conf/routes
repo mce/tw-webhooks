@@ -6,3 +6,4 @@
 # An example controller showing a sample home page
 POST    /slack/tsce/*slug       controllers.SlackWebhookController.onTransferStateChangeEvent(slug: String)
 POST    /slack/balance/*slug    controllers.SlackWebhookController.onBalanceEvent(slug: String)
+GET     /                       controllers.IndexController.index()
