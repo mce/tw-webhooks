@@ -25,3 +25,20 @@ object TransferStateChangeEvent {
   implicit val transferStateChangeEventReads: Reads[TransferStateChangeEvent] = Json.reads[TransferStateChangeEvent]
 
 }
+
+case class BalanceEvent(
+                         data: BalanceData,
+                         subscriptionId: UUID,
+                         schemaVersion: String,
+                         sentAt: Date
+                       )
+
+case class BalanceData(resource: BalanceResource, amount: Double, currency: String, post_transaction_balance_amount: Double)
+case class BalanceResource(id: Long, profileId: Long)
+
+object BalanceEvent {
+  implicit val config = JsonConfiguration(SnakeCase)
+  implicit val balanceResourceReads = Json.reads[BalanceResource]
+  implicit val balanceDataReads = Json.reads[BalanceData]
+  implicit val balanceEventReads = Json.reads[BalanceEvent]
+}
