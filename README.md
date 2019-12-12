@@ -3,8 +3,6 @@ Forwards [Transferwise webhooks](https://api-docs.transferwise.com/#profile-webh
 
 ### Usage
 
-#### Transfer State Change Event(`transfers#state-change`)
-
 - Enable webhooks for your slack channel: https://slack.com/apps/A0F7XDUAZ-incoming-webhooks
 - Once you enable it, you should have a url like `https://hooks.slack.com/services/TR......`
 - For `transfers#state-change` event:
